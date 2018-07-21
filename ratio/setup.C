@@ -10,6 +10,7 @@
 #include "TColor.h"
 #include "TLegend.h"
 #include "TGraphErrors.h"
+#include "TGraphAsymmErrors.h"
 
 //use 256 colors.
 void setup(){
@@ -47,6 +48,7 @@ void SetMainHist(TH1F* h_data, TH1F* h_mc, TString title){
 
   h_data -> SetTitle(title);
   h_data -> GetXaxis() -> SetLabelOffset(100);
+  h_data -> GetYaxis() -> SetLabelOffset(0.01);
   h_data -> GetYaxis() -> SetLabelSize(0.06);
   h_data -> GetXaxis() -> SetTitleSize(0.06);
   h_data -> GetYaxis() -> SetTitleSize(0.06);
@@ -54,6 +56,7 @@ void SetMainHist(TH1F* h_data, TH1F* h_mc, TString title){
 
   h_mc -> SetTitle(title);
   h_mc -> GetYaxis()->SetRangeUser(0.,1.1);
+  h_mc -> GetYaxis() -> SetLabelOffset(0.01);
   h_mc -> GetYaxis() -> SetLabelSize(0.06);
   h_mc -> GetXaxis() -> SetTitleSize(0.06);
   h_mc -> GetYaxis() -> SetTitleSize(0.06);
@@ -71,7 +74,7 @@ void SetRatioHist(TH1F* h_ratio){
   h_ratio -> GetYaxis() -> SetLabelSize(0.15);
   h_ratio -> GetXaxis() -> SetLabelOffset(0.03);
   h_ratio -> GetYaxis() -> SetLabelOffset(0.02);
-  h_ratio -> GetXaxis() -> SetTitleSize(0.12);
+  h_ratio -> GetXaxis() -> SetTitleSize(0.15);
   h_ratio -> GetYaxis() -> SetTitleSize(0.15);
   h_ratio -> GetXaxis() -> SetTitleOffset(1.30);
   h_ratio -> GetYaxis() -> SetTitleOffset(0.5);
@@ -154,7 +157,7 @@ void MainProcess(TCanvas* can, TH1F* h_data, TH1F* h_mc, TString h_title, TStrin
   TH1F* h_ratio  = new TH1F("h_ratio","title", nbinX, binX);
   h_ratio -> SetTitle("ratio");
   h_ratio -> GetXaxis() -> SetTitle(titleX);
-  h_ratio -> GetYaxis() -> SetTitle(Form("#splitline{%s}{/%s}",name_legend_bunshi.Data(), name_legend_bunbo.Data()));
+  h_ratio -> GetYaxis() -> SetTitle(Form("#frac{%s}{%s}",name_legend_bunshi.Data(), name_legend_bunbo.Data()));
 
   //main canvas
   can->cd(1);
