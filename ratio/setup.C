@@ -47,23 +47,26 @@ void SetRatiogPad(){
 void SetMainHist(TH1F* h_data, TH1F* h_mc, TString title){
 
   h_data -> SetTitle(title);
-  h_data -> GetXaxis() -> SetLabelOffset(100);
+  h_data -> GetXaxis() -> SetLabelOffset(1000);
+  h_data -> GetYaxis()->SetRangeUser(0.,1.1);
   h_data -> GetYaxis() -> SetLabelOffset(0.01);
   h_data -> GetYaxis() -> SetLabelSize(0.06);
-  h_data -> GetXaxis() -> SetTitleSize(0.06);
+  h_data -> GetXaxis() -> SetLabelSize(0.00);
+  h_data -> GetXaxis() -> SetTitleSize(0.00);
   h_data -> GetYaxis() -> SetTitleSize(0.06);
-  h_data -> Draw();
+  h_data -> SetMarkerColor(2);
+  h_data -> SetLineColor(2);
 
   h_mc -> SetTitle(title);
   h_mc -> GetYaxis()->SetRangeUser(0.,1.1);
   h_mc -> GetYaxis() -> SetLabelOffset(0.01);
   h_mc -> GetYaxis() -> SetLabelSize(0.06);
+  h_mc -> GetXaxis() -> SetLabelSize(0.00);
   h_mc -> GetXaxis() -> SetTitleSize(0.06);
   h_mc -> GetYaxis() -> SetTitleSize(0.06);
-  h_mc -> SetMarkerColor(2);
-  h_mc -> SetLineColor(2);
 
-  h_mc -> Draw("SAME");
+  h_mc -> Draw();
+  h_data -> Draw("SAME");
 }
 
 
@@ -73,14 +76,16 @@ void SetRatioHist(TH1F* h_ratio){
   h_ratio -> GetXaxis() -> SetLabelSize(0.15);
   h_ratio -> GetYaxis() -> SetLabelSize(0.15);
   h_ratio -> GetXaxis() -> SetLabelOffset(0.03);
-  h_ratio -> GetYaxis() -> SetLabelOffset(0.02);
+  h_ratio -> GetYaxis() -> CenterTitle();
+  h_ratio -> GetYaxis() -> SetLabelOffset(0.01);
   h_ratio -> GetXaxis() -> SetTitleSize(0.15);
-  h_ratio -> GetYaxis() -> SetTitleSize(0.15);
+  h_ratio -> GetYaxis() -> SetTitleSize(0.13);
   h_ratio -> GetXaxis() -> SetTitleOffset(1.30);
-  h_ratio -> GetYaxis() -> SetTitleOffset(0.5);
+  h_ratio -> GetYaxis() -> SetTitleOffset(0.7);
   h_ratio -> SetMinimum(0);
 
-  h_ratio -> GetYaxis()->SetRangeUser(0.7,1.3);
+  h_ratio -> GetYaxis()->SetRangeUser(0.8,1.2);
+  //h_ratio -> GetYaxis()->SetRangeUser(0.8,1.2);
   h_ratio -> GetYaxis() -> SetNdivisions(505);
   h_ratio -> SetMarkerStyle(20);
   h_ratio -> SetMarkerSize(1.2);
@@ -114,9 +119,10 @@ void RatioLoop(TH1F *h_data, TH1F* h_mc, TH1F* h_ratio, int nbinX){
 
 void SetLegend(TH1F* h_data, TH1F* h_mc, TString name_legend_bunshi, TString name_legend_bunbo){
 
-  TLegend *la = new TLegend(0.6,0.2,0.74,0.4,"");
+  TLegend *la = new TLegend(0.5,0.2,0.75,0.45,"");
   la -> AddEntry(h_data,name_legend_bunshi,"lep");
   la -> AddEntry(h_mc,name_legend_bunbo,"lep");
+  //la -> SetTextSize(0.035);
   la -> SetFillStyle(0);
   la -> SetBorderSize(0);
   la -> Draw();

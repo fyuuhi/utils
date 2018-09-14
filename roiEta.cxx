@@ -1,8 +1,12 @@
 
 void  roiEta(){
-  TF1 *roiEta_5  = new TF1("roiEta_5",  "( (5000*sin(2*atan(exp(-x))))/2. )*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))",  0, 2.5);
-  TF1 *roiEta_8  = new TF1("roiEta_8",  "( (8000*sin(2*atan(exp(-x))))/2. )*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))",  0, 2.5);
-  TF1 *roiEta_10 = new TF1("roiEta_10", "( (10000*sin(2*atan(exp(-x))))/2. )*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))", 0, 2.5);
+  //TF1 *roiEta_5  = new TF1("roiEta_5",  "( (5000*sin(2*atan(exp(-x))))/2. )*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))",  0, 2.5);
+  //TF1 *roiEta_8  = new TF1("roiEta_8",  "( (8000*sin(2*atan(exp(-x))))/2. )*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))",  0, 2.5);
+  //TF1 *roiEta_10 = new TF1("roiEta_10", "( (10000*sin(2*atan(exp(-x))))/2. )*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))", 0, 2.5);
+
+  TF1 *roiEta_5  = new TF1("roiEta_5",  "(5000/2.)*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))",  0, 2.5);
+  TF1 *roiEta_8  = new TF1("roiEta_8",  "(8000/2.)*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))",  0, 2.5);
+  TF1 *roiEta_10 = new TF1("roiEta_10", "(10000/2.)*(1./(tan(2*atan(exp(-x-0.05)))) - 1./(tan(2*atan(exp(-x+0.05)))))", 0, 2.5);
 
   roiEta_5->SetTitle(";#eta;#Delta Z [mm]");
   roiEta_5->SetLineWidth(4);
