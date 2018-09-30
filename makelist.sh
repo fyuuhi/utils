@@ -88,8 +88,11 @@
 #JDIR="/gpfs/fs6001/yfukuhar/data/youhei_Zmumu_AOD/Zmumu_SimpleAw/DIR_*/*.root"
 #JLISTNAME="/gpfs/home/yfukuhar/work/TestCalcEffTool/CalcEffTool/run/list/youhei_Zmumu_SimpleAw.list"
 
-DIR="/gpfs/fs6001/yfukuhar/data/youhei_Zmumu_AOD/Zmumu_AwAtan2/DIR_*/*.root"
-LISTNAME="/gpfs/home/yfukuhar/work/TestCalcEffTool/CalcEffTool/run/list/youhei_Zmumu_AwAtan2.list"
+#DIR="/gpfs/fs6001/yfukuhar/data/youhei_Zmumu_AOD/Zmumu_AwAtan2/DIR_*/*.root"
+#LISTNAME="/gpfs/home/yfukuhar/work/TestCalcEffTool/CalcEffTool/run/list/youhei_Zmumu_AwAtan2.list"
+
+DIR="/gpfs/fs6001/yfukuhar/data/data18_rate/data18_13TeV/data18_13TeV.00*"
+LISTNAME="/gpfs/home/yfukuhar/work/TestCalcEffTool/CalcEffTool/run/list/test_data18_rate.list"
 
 if [ -e $LISTNAME ]; then
   rm -i $LISTNAME
