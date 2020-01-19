@@ -1,0 +1,24 @@
+
+--AMITag=r11235
+--autoConfiguration=everything
+--conditionsTag "default:OFLCOND-MC16-SDR-25"
+--digiSteeringConf='StandardSignalOnlyTruth'
+--geometryVersion="default:ATLAS-R2-2016-01-00-01"
+--numberOfCavernBkg=0
+--numberOfHighPtMinBias=0.15520183
+--numberOfLowPtMinBias=59.3447981771
+--pileupFinalBunch=6
+--postExec "all:CfgMgr.MessageSvc().setError+=[\"HepMcParticleLink\"]" "ESDtoAOD:fixedAttrib=[s if \"CONTAINER_SPLITLEVEL = '99'\" not in s else \"\" for s in svcMgr.AthenaPoolCnvSvc.PoolAttributes];svcMgr.AthenaPoolCnvSvc.PoolAttributes=fixedAttrib" "RAWtoESD:ToolSvc.MuonLayerHoughTool.AddSectors=False"
+--postInclude "default:PyJobTransforms/UseFrontier.py"
+--preExec "all:rec.Commissioning.set_Value_and_Lock(True);from AthenaCommon.BeamFlags import jobproperties;jobproperties.Beam.numberOfCollisions.set_Value_and_Lock(20.0);from LArROD.LArRODFlags import larRODFlags;larRODFlags.NumberOfCollisions.set_Value_and_Lock(20);larRODFlags.nSamples.set_Value_and_Lock(4);larRODFlags.doOFCPileupOptimization.set_Value_and_Lock(True);larRODFlags.firstSample.set_Value_and_Lock(0);larRODFlags.useHighestGainAutoCorr.set_Value_and_Lock(True); from LArDigitization.LArDigitizationFlags import jobproperties;jobproperties.LArDigitizationFlags.useEmecIwHighGain.set_Value_and_Lock(False)" "all:from InDetRecExample.InDetJobProperties import InDetFlags; InDetFlags.doSlimming.set_Value_and_Lock(False)" "all:from TriggerJobOpts.TriggerFlags import TriggerFlags;TriggerFlags.AODEDMSet.set_Value_and_Lock(\"AODFULL\");" "RAWtoESD:rec.doFTK.set_Value_and_Lock(True)"
+--preInclude "HITtoRDO:Digitization/ForceUseOfPileUpTools.py,SimulationJobOptions/preInlcude.PileUpBunchTrainsMC16c_2017_Config1.py,RunDependentSimData/configLumi_run300000_mc16d.py"
+--runNumber=424103
+--steering="doRDO_TRIG"
+--triggerConfig="RDOtoRDOTrigger=MCRECO:DBF:TRIGGERDBMC:2234,88,280"
+--valid=True
+--inputHighPtMinbiasHitsFile=${IN_MINBIAS_HIGH/L}' dataset='mc16_13TeV.361239.Pythia8EvtGen_A3NNPDF23LO_minbias_inelastic_high.simul.HITS.e4981_s3087_s3111/' offset='0' ratio='1'
+--inputLowPtMinbiasHitsFile=${IN_MINBIAS_LOW/L}' dataset='mc16_13TeV.361238.Pythia8EvtGen_A3NNPDF23LO_minbias_inelastic_low.simul.HITS.e4981_s3087_s3111/' offset='0' ratio='3'
+--inputRDO_FTKFile=${IN_RDO_FTK/L}' dataset='mc16_13TeV.424103.Pythia8B_A14NNPDF23LO_pp_Jpsi_mu15mu2p5.digit.RDO_FTK.e4397_s3126_r11234_d1505_tid17123182_00' offset='0'
+--maxEvents=${MAXEVENTS}
+--skipEvents=${SKIPEVENTS}
+--outputAODFile=AOD.17123186._${SN}.pool.root' dataset='user.yfukuhar.pp_Jpsi_mu15mu2p5.digit.AOD.e4397_s3126_r11234_d1505_r11235_tid17123186_00' offset='0' token='ATLASDATADISK'
