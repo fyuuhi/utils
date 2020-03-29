@@ -295,8 +295,14 @@
 #DIR="/gpfs/fs7001/yfukuhar/workspace/AthenaAnalysis/master/master_yamaguchi2/LocalAthena/run/bsub_reco15_max/*/AOD.pool.root"
 #LISTNAME="/gpfs/fs7001/yfukuhar/workspace/testMaster/Ana/CalcEffTool22/source/CalcEffTool/run/list/bsub_reco15_max.list"
 
-DIR="/gpfs/fs7001/yfukuhar/workspace/AthenaAnalysis/master/master_yamaguchi2/LocalAthena/run/bsub_reco16_max/*/AOD.pool.root"
-LISTNAME="/gpfs/fs7001/yfukuhar/workspace/testMaster/Ana/CalcEffTool22/source/CalcEffTool/run/list/bsub_reco16_max.list"
+#DIR="/gpfs/fs7001/yfukuhar/workspace/AthenaAnalysis/master/master_yamaguchi2/LocalAthena/run/bsub_reco16_max/*/AOD.pool.root"
+#LISTNAME="/gpfs/fs7001/yfukuhar/workspace/testMaster/Ana/CalcEffTool22/source/CalcEffTool/run/list/bsub_reco16_max.list"
+
+#DIR="/gpfs/fs7001/yfukuhar/workspace/AthenaAnalysis/master/master_yamaguchi2/LocalAthena/run/bsub_reco18_max/*/AOD.pool.root"
+#LISTNAME="/gpfs/fs7001/yfukuhar/workspace/testMaster/Ana/CalcEffTool22/source/CalcEffTool/run/list/bsub_reco18_max.list"
+
+DIR="/gpfs/fs7001/yfukuhar/workspace/AthenaAnalysis/master/master_yamaguchi2/LocalAthena/run/bsub_reco19_max/*/AOD.pool.root"
+LISTNAME="/gpfs/fs7001/yfukuhar/workspace/testMaster/Ana/CalcEffTool22/source/CalcEffTool/run/list/bsub_reco19_max.list"
 
 
 
